@@ -2,9 +2,9 @@ import 'package:flutter_homework/data/api/models/rick_and_morty_location_model.d
 import 'package:json_annotation/json_annotation.dart';
 
 
-part 'rick_and_morty_result_model.g.dart';
+part 'rick_and_morty_character_model.g.dart';
 @JsonSerializable()
-class ResultModel {
+class CharacterModel {
   int? id;
   String? name;
   Status? status;
@@ -18,10 +18,10 @@ class ResultModel {
   String? url;
   DateTime? created;
 
-  factory ResultModel.fromJson(Map<String, dynamic> json) =>
-      _$ResultModelFromJson(json);
+  factory CharacterModel.fromJson(Map<String, dynamic> json) =>
+      _$CharacterModelFromJson(json);
 
-  ResultModel({
+  CharacterModel({
     this.id,
     this.name,
     this.status,
@@ -36,7 +36,7 @@ class ResultModel {
     this.created,
   });
 
-  Map<String, dynamic> toJson() => _$ResultModelToJson(this);
+  Map<String, dynamic> toJson() => _$CharacterModelToJson(this);
 }
 
 enum Gender {

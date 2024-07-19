@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_homework/data/api/models/rick_and_morty_result_model.dart';
 import 'package:retrofit/http.dart';
 import 'package:retrofit/retrofit.dart';
 
+import 'models/rick_and_morty_character_model.dart';
 import 'models/rick_and_morty_model.dart';
 
 part 'rick_and_morty_rest_client.g.dart';
@@ -15,5 +15,5 @@ abstract class RickAndMortyRestClient {
   Future<RickAndMortyModel> getCharacters(@Query('page') int page, @Query('status') String status);
 
   @GET('/character/{id}')
-  Future<ResultModel> getCharacter(@Path('id') int id);
+  Future<CharacterModel> getCharacter(@Path('id') int id);
 }

@@ -1,12 +1,12 @@
+import 'package:flutter_homework/data/api/models/rick_and_morty_character_model.dart';
 import 'package:flutter_homework/data/api/models/rick_and_morty_info_model.dart';
-import 'package:flutter_homework/data/api/models/rick_and_morty_result_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'rick_and_morty_model.g.dart';
 @JsonSerializable()
 class RickAndMortyModel {
   InfoModel? info;
-  List<ResultModel>? results;
+  List<CharacterModel>? results;
 
   factory RickAndMortyModel.fromJson(Map<String, dynamic> json) =>
       _$RickAndMortyModelFromJson(json);
