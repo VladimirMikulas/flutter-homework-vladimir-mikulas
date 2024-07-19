@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_homework/router/routes.dart';
-import 'package:flutter_homework/widgets/app_back_button.dart';
+import 'package:flutter_homework/presentation/router/routes.dart';
+import 'package:flutter_homework/presentation//widgets/app_back_button.dart';
 import 'package:go_router/go_router.dart';
 
 class MainRoute extends StatelessWidget {

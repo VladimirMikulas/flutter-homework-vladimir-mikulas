@@ -1,4 +1,4 @@
-import 'package:flutter_homework/router/paths.dart';
+import 'package:flutter_homework/presentation/router/paths.dart';
 
 class RoutesInfo {
   static const String mainRouteInfo = Paths.mainPath;

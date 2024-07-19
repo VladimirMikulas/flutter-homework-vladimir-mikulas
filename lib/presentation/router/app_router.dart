@@ -1,6 +1,6 @@
-import 'package:flutter_homework/router/paths.dart';
-import 'package:flutter_homework/router/routes.dart';
-import 'package:flutter_homework/routes/main_route.dart';
+import 'package:flutter_homework/presentation/router/paths.dart';
+import 'package:flutter_homework/presentation/router/routes.dart';
+import 'package:flutter_homework/presentation/routes/main_route.dart';
 import 'package:go_router/go_router.dart';
 
 import '../routes/characters_route.dart';
