@@ -8,13 +8,13 @@ class MainRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text("NetGlade's Flutter homework"),
-          leading: AppBackButton(),
-        ),
-        body: SizedBox.expand(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("NetGlade's Flutter homework"),
+        leading: AppBackButton(),
+      ),
+      body: SafeArea(
+        child: SizedBox.expand(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 64),
             child: Column(

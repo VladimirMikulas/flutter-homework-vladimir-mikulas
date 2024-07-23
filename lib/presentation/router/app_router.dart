@@ -1,9 +1,9 @@
 import 'package:flutter_homework/presentation/router/paths.dart';
 import 'package:flutter_homework/presentation/router/routes.dart';
-import 'package:flutter_homework/presentation/routes/main_route.dart';
+import 'package:flutter_homework/presentation/screens/main/main_route.dart';
 import 'package:go_router/go_router.dart';
 
-import '../routes/characters_route.dart';
+import '../screens/characters/characters_page.dart';
 
 class AppRouter {
   final router = GoRouter(
@@ -15,7 +15,7 @@ class AppRouter {
       ),
       GoRoute(
         path: Paths.charactersPath,
-        builder: (context, state) => const CharactersRoute(),
+        builder: (context, state) => const CharactersPage(),
       ),
     ],
   );

@@ -24,8 +24,8 @@ CharacterItemUiModel toCharacterItemUiModel(CharacterModel model) {
   return CharacterItemUiModel(
     id: model.id ?? -1,
     name: model.name ?? '',
-    status: model.status ?? Status.UNKNOWN,
-    gender: model.gender ?? Gender.UNKNOWN,
+    status: model.status ?? Status.unknown,
+    gender: model.gender ?? Gender.unknown,
     lastLocationName: model.location?.name ?? '',
     image: model.image ?? '',
   );

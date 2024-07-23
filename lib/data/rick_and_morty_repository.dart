@@ -4,30 +4,46 @@ import 'package:flutter_homework/data/api/rick_and_morty_rest_client.dart';
 
 import 'api/models/rick_and_morty_character_model.dart';
 
-enum CharacterStatus {
+enum CharacterStatusFilter {
   alive('alive'),
   dead('dead'),
   unknown('unknown'),
   all('');
 
-  const CharacterStatus(this.value);
+  const CharacterStatusFilter(this.value);
 
   final String value;
 }
 
-extension CharacterStatusX on CharacterStatus {
-  bool get isAlive => this == CharacterStatus.alive;
-  bool get isDead => this == CharacterStatus.dead;
-  bool get isUnknown => this == CharacterStatus.unknown;
-  bool get isAll => this == CharacterStatus.all;
+extension CharacterStatusFilterX on CharacterStatusFilter {
+  bool get isAlive => this == CharacterStatusFilter.alive;
+
+  bool get isDead => this == CharacterStatusFilter.dead;
+
+  bool get isUnknown => this == CharacterStatusFilter.unknown;
+
+  bool get isAll => this == CharacterStatusFilter.all;
+
+  CharacterStatusFilter get nextStatus {
+    switch (this) {
+      case CharacterStatusFilter.alive:
+        return CharacterStatusFilter.dead;
+      case CharacterStatusFilter.dead:
+        return CharacterStatusFilter.unknown;
+      case CharacterStatusFilter.unknown:
+        return CharacterStatusFilter.all;
+      default:
+        return CharacterStatusFilter.alive;
+    }
+  }
 }
 
 class RickAndMortyRepository {
   final _restClient = RickAndMortyRestClient(Dio());
 
-  Future<RickAndMortyModel> getRickAndMortyCharacters(int page, CharacterStatus status) =>
+  Future<RickAndMortyModel> getRickAndMortyCharacters(
+          int page, CharacterStatusFilter status) async =>
       _restClient.getCharacters(page, status.value);
 
-  Future<CharacterModel> getCharacter(int id) =>
-      _restClient.getCharacter(id);
+  Future<CharacterModel> getCharacter(int id) => _restClient.getCharacter(id);
 }

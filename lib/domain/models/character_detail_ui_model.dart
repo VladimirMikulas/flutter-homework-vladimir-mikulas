@@ -19,7 +19,6 @@ class CharacterDetailUiModel {
     required this.lastLocationName,
     required this.image,
     required this.listOfEpisodes,
-
   });
 }
 
@@ -27,8 +26,8 @@ CharacterDetailUiModel toCharacterDetailUiModel(CharacterModel model) {
   return CharacterDetailUiModel(
     id: model.id ?? -1,
     name: model.name ?? '',
-    species: model.status ?? Status.UNKNOWN,
-    type: model.gender ?? Gender.UNKNOWN,
+    species: model.status ?? Status.unknown,
+    type: model.gender ?? Gender.unknown,
     lastLocationName: model.location?.name ?? '',
     image: model.image ?? '',
     listOfEpisodes: model.episode?.map((e) => e.split("/").last).toList() ?? List.empty()

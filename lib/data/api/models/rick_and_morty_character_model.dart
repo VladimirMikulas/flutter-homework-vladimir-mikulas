@@ -40,16 +40,16 @@ class CharacterModel {
 }
 
 enum Gender {
-  FEMALE,
-  MALE,
-  GENDERLESS,
-  UNKNOWN
+  Female,
+  Male,
+  Genderless,
+  unknown
 }
 
 enum Status {
-  ALIVE,
-  DEAD,
-  UNKNOWN
+  Alive,
+  Dead,
+  unknown
 }
 
 
