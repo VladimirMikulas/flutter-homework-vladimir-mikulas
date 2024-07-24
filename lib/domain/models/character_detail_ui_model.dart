@@ -35,10 +35,7 @@ CharacterDetailUiModel toCharacterDetailUiModel(
       type: characterModel.type ?? '',
       lastLocationName: characterModel.location?.name ?? '',
       image: characterModel.image ?? '',
-      episodes: episodeModel
-          .map((e) => EpisodeUiModel(
-              id: e.id, name: e.name, airDate: e.air_date, episode: e.episode))
-          .toList());
+      episodes: episodeModel.map((e) => toEpisodeUiModel(e)).toList());
   return characterDetailUiModel;
 }
 

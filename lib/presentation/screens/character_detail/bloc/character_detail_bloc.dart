@@ -21,7 +21,9 @@ class CharacterDetailBloc
       GetCharacterDetail event, Emitter<CharacterDetailState> emit) async {
     emit(state.copyWith(status: CharacterDetailStatus.loading));
     var characterResult;
-    await rickAndMortyRepository.getCharacter(event.characterId).then((character) {
+    await rickAndMortyRepository
+        .getCharacter(event.characterId)
+        .then((character) {
       characterResult = character;
     }).catchError((error) {
       emit(state.copyWith(status: CharacterDetailStatus.error));
@@ -43,7 +45,7 @@ class CharacterDetailBloc
     });
   }
 
-  List<String> _getEpisodeIdsFromUrls(List<String>? episodeUrls) {
-    return episodeUrls?.map((e) => e.split('/').last).toList() ?? [];
+  List<String> _getEpisodeIdsFromUrls(List<String> episodeUrls) {
+    return episodeUrls.map((e) => e.split('/').last).toList();
   }
 }
