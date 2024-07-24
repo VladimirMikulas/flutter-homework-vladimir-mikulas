@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_homework/presentation/screens/characters/bloc/characters_bloc.dart';
 import 'package:flutter_homework/presentation/screens/characters/widgets/characters_list_view.dart';
-import 'package:flutter_homework/presentation/screens/characters/widgets/error_widget.dart';
+
+import '../../widgets/error_loading_data_widget.dart';
 
 class CharactersLayout extends StatelessWidget {
   CharactersLayout({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class CharactersLayout extends StatelessWidget {
             : state.status.isLoading
                 ? Center(child: CircularProgressIndicator())
                 : state.status.isError
-                    ? ErrorCharactersWidget()
+                    ? ErrorLoadingDataWidget()
                     : const SizedBox();
       },
     );

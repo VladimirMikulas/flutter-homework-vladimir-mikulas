@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_homework/data/api/models/rick_and_morty_character_model.dart';
-import 'package:flutter_homework/domain/models/character_item_ui_model.dart';
 import 'package:flutter_homework/presentation/screens/characters/bloc/characters_bloc.dart';
-import 'package:flutter_homework/presentation/screens/characters/widgets/error_widget.dart';
 
 import 'bottom_loader.dart';
 import 'character_tile.dart';

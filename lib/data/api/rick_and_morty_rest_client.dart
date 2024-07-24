@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_homework/data/api/models/rick_and_morty_episode_model.dart';
 import 'package:retrofit/http.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -16,4 +17,7 @@ abstract class RickAndMortyRestClient {
 
   @GET('/character/{id}')
   Future<CharacterModel> getCharacter(@Path('id') int id);
+
+  @GET('/episode/{ids}')
+  Future<List<EpisodeModel>> getEpisodes(@Path('ids') List<String> ids);
 }

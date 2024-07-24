@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_homework/data/api/models/rick_and_morty_episode_model.dart';
 import 'package:flutter_homework/data/api/models/rick_and_morty_model.dart';
 import 'package:flutter_homework/data/api/rick_and_morty_rest_client.dart';
 
@@ -45,5 +46,9 @@ class RickAndMortyRepository {
           int page, CharacterStatusFilter status) async =>
       _restClient.getCharacters(page, status.value);
 
-  Future<CharacterModel> getCharacter(int id) => _restClient.getCharacter(id);
+  Future<CharacterModel> getCharacter(int id) async =>
+      _restClient.getCharacter(id);
+
+  Future<List<EpisodeModel>> getEpisodes(List<String> ids) async =>
+      _restClient.getEpisodes(ids);
 }

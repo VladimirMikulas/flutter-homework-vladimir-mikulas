@@ -1,14 +1,10 @@
-import 'dart:async';
-import 'dart:developer';
-
 import 'package:equatable/equatable.dart';
-import 'package:flutter_homework/data/rick_and_morty_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_homework/data/rick_and_morty_repository.dart';
 
 import '../../../../domain/models/character_item_ui_model.dart';
 
 part 'characters_event.dart';
-
 part 'characters_state.dart';
 
 class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
@@ -38,7 +34,6 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         ),
       );
     }).catchError((error) {
-      log('dataError: $error');
       emit(state.copyWith(status: CharactersStatus.error));
     });
   }

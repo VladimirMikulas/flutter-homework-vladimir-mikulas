@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_homework/data/api/models/rick_and_morty_character_model.dart';
 import 'package:flutter_homework/domain/models/character_item_ui_model.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../router/routes.dart';
 
 class CharacterTile extends StatelessWidget {
   CharacterTile({required this.character, Key? key}) : super(key: key);
@@ -23,7 +26,7 @@ class CharacterTile extends StatelessWidget {
           type: MaterialType.transparency,
           child: ListTile(
               leading: Hero(
-                tag: character.name,
+                tag: character.id,
                 child: CircleAvatar(
                   backgroundImage: NetworkImage(character.image),
                 ),
@@ -36,14 +39,8 @@ class CharacterTile extends StatelessWidget {
               title: Text(character.name),
               subtitle: Text(character.lastLocationName),
               onTap: () {
-                /*Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => CountryDetailsPage(
-                    countryDetails: character,
-                  ),
-                ),
-              );*/
+                GoRouter.of(context)
+                    .push(RoutesInfo.characterDetailRouteInfo, extra: character.id);
               }),
         ),
       ),
