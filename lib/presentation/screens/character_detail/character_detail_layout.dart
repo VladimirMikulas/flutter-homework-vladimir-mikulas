@@ -74,10 +74,8 @@ class CharacterDetailLayout extends StatelessWidget {
                                   height: 22,
                                 ),
                                 Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(bottom: 32),
-                                    child: ListView(
-                                        children: [Column(children: [
+                                  child: ListView(
+                                      children: [
                                       CharacterDetailItem(
                                           label: 'Type:',
                                           data: state.characterDetail.type),
@@ -94,11 +92,9 @@ class CharacterDetailLayout extends StatelessWidget {
                                                 episode.episode ?? '',
                                             name: episode.name ?? '',
                                             releaseDate: episode.airDate ?? '')
-                                    ]),
-                                        ],
-                                    ),
-                                  ),
 
+                        ],
+                      ),
                             ),]
                           ),
                         ),
