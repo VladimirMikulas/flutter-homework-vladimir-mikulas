@@ -53,4 +53,6 @@ The detail route should contain additional information about a character a user 
 
 Here you can add your notes of ideas, a tradeoff of your solutions, or found bugs:
 
-- ...
+- To generate data models classes and retrofit
+
+  dart run build_runner build --delete-conflicting-outputs
